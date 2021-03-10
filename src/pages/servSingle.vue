@@ -16,7 +16,7 @@
 			 	<div class="descr-box">
 					<h2 class="side_dev">Что входит  в услугу:</h2>
 					<p class="white-txt">{{serv(id).descr}}</p> <br>
-					<button class="more-btn">Записаться</button>
+					<button class="more-btn">Посмотреть цены</button>
 			 	</div>
 			</div>
 		</section>

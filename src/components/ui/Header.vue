@@ -49,10 +49,6 @@
 						txt: 'Цены'
 					},
 					{
-						link: '/vacansies',
-						txt: 'Вакансии'
-					},
-					{
 						link: '/contacts',
 						txt: 'Контакты'
 					},
