@@ -60,6 +60,7 @@
 					</div>
 				</div>
 
+
 			</div>
 		</div>
 	</div>
@@ -72,6 +73,7 @@ import axios from 'axios'
 	export default{
 		data(){
     		return{
+            
         		checkedBrand: '',
         		carBrands: null,
         		models: null,

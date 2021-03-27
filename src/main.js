@@ -8,7 +8,7 @@ import VueTheMask from 'vue-the-mask'
 import Vuelidate from 'vuelidate'
 import VueScrollTo from 'vue-scrollto'
 import VueTyperPlugin from 'vue-typer'
-
+import VCalendar from 'v-calendar';
 
 
 import 'swiper/css/swiper.css'
@@ -21,6 +21,7 @@ Vue.use(VueAwesomeSwiper)
 Vue.use(VueScrollTo)
 Vue.use(VueTheMask)
 
+Vue.use(VCalendar);
 
 
 
