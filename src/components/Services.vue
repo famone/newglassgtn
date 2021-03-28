@@ -2,7 +2,7 @@
 	<section id="services">
 		<div class="container">
 			<div class="col-lg-12" v-if="this.$route.path === '/' ">
-				<h2 class="side_dev">Услги</h2>
+				<h2 class="side_dev">Услуги</h2>
 			</div>
 			<div class="serv-row">
 				<div class="serv-item" v-for="item in services">
