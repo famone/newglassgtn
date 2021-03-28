@@ -1,6 +1,6 @@
 <template>
 	<section id="main">
-		<video src="http://yt.webink.site/video.MP4" 
+		<video src="https://new.glassgtn.ru/wp-content/themes/ag/assets/video.MP4" 
 	        autoplay="autoplay" 
 	        loop="loop" 
 	        playsinline="playsinline" 

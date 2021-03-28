@@ -15,7 +15,7 @@
 			<div class="container">
 			 	<div class="descr-box">
 					<h2 class="side_dev">Что входит  в услугу:</h2>
-					<p class="white-txt">{{serv(id).descr}}</p> <br>
+					<p class="white-txt" v-html="serv(id).descr"></p> <br>
 					<button class="more-btn">Посмотреть цены</button>
 			 	</div>
 			</div>

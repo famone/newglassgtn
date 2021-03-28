@@ -575,6 +575,41 @@ footer{
 	align-items: center;
 	display: flex;
 }
+.wh-link{
+	color: #fff;
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+
+/*contacts*/
+#contacts{
+	position: relative;
+	padding: 200px 0;
+}
+#map{
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	width: 100%;	
+}
+.cont-box{
+	padding: 30px 25px;
+	background-color: #1B1B1B;
+	position: relative;
+	z-index: 2;
+}
+.wh-link a{
+	color: #fff;
+	transition: all .3s ease;
+}
+.wh-link a:hover{
+	color: #F14944;
+}
+
 
 
 

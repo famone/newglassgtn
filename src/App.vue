@@ -4,10 +4,7 @@
       <Header />
   
       <router-view></router-view>
-
-
-      <Map />
-
+      <Map v-show="this.$route.path === '/' " />
       <Footer />
 
 
@@ -45,28 +42,10 @@ import Map from './components/Map.vue'
         return this.models[this.checkedBrand]
       }
     },
-  	// created(){
-  	// 	axios
-   //    .get('https://raw.githubusercontent.com/blanzh/carsBase/master/docs/cars3.json')
-   //    .then(res => {
-   //      console.log(res)
-
-   //      this.models = res.data
-        
-   //      let cars = [];
-
-   //      for (let car in res.data) {
-   //          if ( res.data.hasOwnProperty(car)) {
-   //              cars.push(car)
-   //          }
-   //      }
-
-   //      this.carBrands = cars
-
-   //      console.log(cars)
-
-   //    })
-  	// }
+  	created(){
+  		this.$store.dispatch("serv/loadServs")
+      this.$store.dispatch("proj/loadProj")
+  	}
   }
 </script>
 
