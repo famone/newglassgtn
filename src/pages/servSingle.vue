@@ -33,6 +33,35 @@
 			<div class="swiper-pagination"></div>
 		</section>
 
+
+		<section id="prices">
+			<div class="container">
+				<div class="col-lg-12">
+					<h2 class="side_dev">Цены</h2>
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<th>Услуга</th>
+							<th>Легковые</th>
+							<th>Бизнес-класс</th>
+							<th>Джипы/минивэны</th>
+							<th>Микроавтобусы</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr v-for="price in serv(id).prices">
+							<td>{{price.naimenovanie}}</td>
+							<td>от {{parseInt(price.legkovoj).toLocaleString()}} ₽</td>
+							<td>от {{parseInt(price.biznes).toLocaleString()}} ₽</td>
+							<td>от {{parseInt(price.dzhip).toLocaleString()}} ₽</td>
+							<td>от {{parseInt(price.mikroavtobus).toLocaleString()}} ₽</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
 		
 
 
@@ -50,8 +79,24 @@ export default{
 	props: ["id"],
 	data(){
 		return{
+			// prices: [
+			// 	{
+			// 		name: 'Предпродажная полировка',
+			// 		light: 5000,
+			// 		buisness: 6000,
+			// 		jeep: 7000,
+			// 		bus: 8000
+			// 	},
+			// 	{
+			// 		name: 'Предпродажная полировка с дальнейшим покрытием',
+			// 		light: 5000,
+			// 		buisness: 6000,
+			// 		jeep: 7000,
+			// 		bus: 8000
+			// 	},
+			// ],
 			swiperOptions: {
-                  slidesPerView: 2,
+                  slidesPerView: 3,
                   spaceBetween: 30,
                   draggable: true,
                   touchRatio: 1,
@@ -63,25 +108,6 @@ export default{
         			el: '.swiper-pagination',
         			clickable: true,
        			  },
-            //       navigation: {
-		          //   nextEl: '.swiper-button-next',
-		          //   prevEl: '.swiper-button-prev',
-		          // },
-		          //  breakpoints: {
-			         //    320: {
-			         //      slidesPerView: 1.2,
-			         //      spaceBetween: 15,
-			         //       touchRatio: 1
-			         //    },
-			         //    768: {
-				        //   slidesPerView: 1.9,
-				        //    touchRatio: 1
-				        // },
-				        // 1150: {
-				        //   slidesPerView: 1.9,
-				        //    touchRatio: 0
-				        // }
-			         //  }
             	},
 		}
 	},
@@ -104,7 +130,7 @@ export default{
 <style>
 	.slide-img{
 		width: 100%;
-		height: 445px;
+		height: 345px;
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;

@@ -5,14 +5,24 @@
 				<h2 class="side_dev">Услуги</h2>
 			</div>
 			<div class="serv-row">
-				<div class="serv-item" v-for="item in services">
+				<router-link tag="div" :to=" '/services/' + item.id " class="col-lg-3" v-for="item in services">
+					<div class="serv-item">
+						<div class="serv-body">
+							<router-link tag="p" :to=" '/services/' + item.id " class="podrobnee">
+								Подробнее <img src="../assets/img/redarr.svg" alt="">
+							</router-link>
+							<h3>{{item.name}}</h3>
+						</div>
+					</div>
+				</router-link>
+				<!-- <div class="serv-item" v-for="item in services">
 					<div class="serv-img"></div>
 					<div class="serv-body">
 						<h3>{{item.name}}</h3>
 						<router-link tag="p" :to=" '/services/' + item.id " class="podrobnee">Подробнее</router-link>
 						<button class="more-btn">Записаться</button>
 					</div>
-				</div>  
+				</div>   -->
 			</div>
 		</div>
 	</section>

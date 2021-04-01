@@ -24,6 +24,9 @@ const proj = {
 	getters: {
 		getProjects(state){
 			return state.projects
+		},
+		getProject: (state) => (id) =>{
+			return state.projects.find(item => item.id == id)
 		}
 	}
 }

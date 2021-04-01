@@ -6,25 +6,25 @@
 			</div>
 
 			<div class="col-lg-6 pr-col">
-				<div class="proj-item">
+				<router-link tag="div" :to="'/projects/' +  projects[0].id" class="proj-item">
 					<div>
 						<h3>{{projects[0].name}}</h3>
 						<p class="white-txt" v-html="projects[0].descr"></p>
 					</div>
 					<div class="proj-bg-img"></div>
 
-				</div>
+				</router-link>
 			</div>
 			<div class="col-lg-6 pr-col">
 				<div class="row no-row">
 					<div class="col-lg-6 pr-col" v-for="item in projects.slice(0, projects.length-1)">
-						<div class="proj-item2">
+						<router-link tag="div" :to="'/projects/' +  item.id" class="proj-item2">
 							<div>
 								<h3>{{item.name}}</h3>
 								<p class="white-txt" v-html="item.descr"></p>
 							</div>
-							<div class="proj-bg-img" :style="{'background-image': 'url(' + item.image + ')'}"></div>
-						</div>
+							<div class="proj-bg-img" :style="{'background-image': 'url(' + item.mainPhoto + ')'}"></div>
+						</router-link>
 					</div>
 				</div>
 			</div>
