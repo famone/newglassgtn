@@ -4,7 +4,7 @@
       <Header />
   
       <router-view></router-view>
-      <Map v-show="this.$route.path === '/' " />
+      <Map v-show="this.$route.path === '/' || this.$route.path === '/contacts' " />
       <Footer />
 
 

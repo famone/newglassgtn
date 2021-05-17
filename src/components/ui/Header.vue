@@ -18,7 +18,7 @@
 			</div>
 		</div>
 		<div class="mobile-menu" v-if="mobileMenu">
-			<ul class="top-menu">
+			<ul class="top-menu" @click="mobileMenu = false">
 				<router-link tag="li" :to="nav.link" v-for="nav in navs" >{{nav.txt}}</router-link>
 			</ul>
 		</div>
@@ -43,10 +43,6 @@
 					{
 						link: '/gallery',
 						txt: 'Галерея работ'
-					},
-					{
-						link: '/prices',
-						txt: 'Цены'
 					},
 					{
 						link: '/contacts',

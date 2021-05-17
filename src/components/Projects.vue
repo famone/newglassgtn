@@ -31,7 +31,7 @@
 
 			<div class="col-lg-12 text-center">
 				<p class="white-txt center-link">
-					<a href="https://www.instagram.com/autoglassgatchina/">Больше проектов в нашем <span class="red">Instagram</span></a>
+					<a href="https://www.instagram.com/autoglassgatchina/" target="_blank">Больше проектов в нашем <span class="red">Instagram</span></a>
 				</p>
 			</div>
 

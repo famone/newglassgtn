@@ -16,7 +16,7 @@
 			 	<div class="descr-box">
 					<h2 class="side_dev">Что входит  в услугу:</h2>
 					<p class="white-txt" v-html="serv(id).descr"></p> <br>
-					<button class="more-btn">Посмотреть цены</button>
+					<button v-scroll-to="'#prices'" class="more-btn">Посмотреть цены</button>
 			 	</div>
 			</div>
 		</section>
@@ -39,26 +39,28 @@
 				<div class="col-lg-12">
 					<h2 class="side_dev">Цены</h2>
 				</div>
-				<table>
-					<thead>
-						<tr>
-							<th>Услуга</th>
-							<th>Легковые</th>
-							<th>Бизнес-класс</th>
-							<th>Джипы/минивэны</th>
-							<th>Микроавтобусы</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr v-for="price in serv(id).prices">
-							<td>{{price.naimenovanie}}</td>
-							<td>от {{parseInt(price.legkovoj).toLocaleString()}} ₽</td>
-							<td>от {{parseInt(price.biznes).toLocaleString()}} ₽</td>
-							<td>от {{parseInt(price.dzhip).toLocaleString()}} ₽</td>
-							<td>от {{parseInt(price.mikroavtobus).toLocaleString()}} ₽</td>
-						</tr>
-					</tbody>
-				</table>
+				<div class="table-responsive">
+					<table>
+						<thead>
+							<tr>
+								<th>Услуга</th>
+								<th>Легковые</th>
+								<th>Бизнес-класс</th>
+								<th>Джипы/минивэны</th>
+								<th>Микроавтобусы</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr v-for="price in serv(id).prices">
+								<td>{{price.naimenovanie}}</td>
+								<td>от {{parseInt(price.legkovoj).toLocaleString()}} ₽</td>
+								<td>от {{parseInt(price.biznes).toLocaleString()}} ₽</td>
+								<td>от {{parseInt(price.dzhip).toLocaleString()}} ₽</td>
+								<td>от {{parseInt(price.mikroavtobus).toLocaleString()}} ₽</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</section>
 
@@ -108,6 +110,22 @@ export default{
         			el: '.swiper-pagination',
         			clickable: true,
        			  },
+					breakpoints: {
+			            320: {
+			              slidesPerView: 1,
+			              spaceBetween: 15,
+			              touchRatio: 1
+			            },
+			            768: {
+				          slidesPerView: 2,
+				           touchRatio: 1
+				        },
+				        1150: {
+				          slidesPerView: 3,
+				          spaceBetween: 15,
+				           touchRatio: 1
+				        }
+			          }
             	},
 		}
 	},

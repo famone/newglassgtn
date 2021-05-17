@@ -841,6 +841,27 @@ footer{
 	.scquare:before{
 		display: none;
 	}
+	table td{
+		white-space: nowrap;
+	}
+	table th{
+		white-space: nowrap;
+	}
+	.footer-row{
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.webink{
+		text-align: center;
+		width: 100%;
+		padding-top: 30px;
+	}
+	.social-links{
+		width: 100%;
+		padding-top: 30px;
+		justify-content: center;
+		display: flex;
+	}
 }
 @media (max-width: 390px) {
 	
@@ -874,3 +895,6 @@ a:focus{
 
 
 
+.table-responsive{
+	border:none;
+}
