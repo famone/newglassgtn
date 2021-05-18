@@ -60,6 +60,11 @@
 						</div>
 					</div>
 				</div>
+				<div class="col-lg-12">
+					<br>
+					<p v-if="error" style="color:#F14944;" >Ошибка отправки письма</p>
+					<p v-if="succeed" style="color:green;" >Письмо отправлено успешно!</p>
+				</div>
 
 
 			</div>
@@ -84,6 +89,8 @@ import { required, minLength } from "vuelidate/lib/validators";
         		accepted: false,
 				name: '',
 				tel: '',
+				succeed: false,
+				error:  false,
         		types: [
         			{
         				txt: 'Легковой',
@@ -184,12 +191,22 @@ import { required, minLength } from "vuelidate/lib/validators";
 				};
 
 				axios
-            	.post('https://new.glassgtn.ru/wp-json/contact-form-7/v1/contact-forms/18/feedback', form)
+            	.post('/wp-json/contact-form-7/v1/contact-forms/18/feedback', form)
                 .then((response) => {
-                    alert('Письмо отправлено!')
+                    this.checkedServ = '';
+					this.checkedBrand = '';
+					this.checkedModel = '';
+					this.accepted = false;
+					this.succeed = true;
+					this.error = false;
                 })
                 .catch((error) => {
-                    alert('Произошла ошибка!')
+                    this.checkedServ = '';
+					this.checkedBrand = '';
+					this.checkedModel = '';
+					this.accepted = false;
+					this.succeed = false;
+					this.error = true;
                 });
 			}
     	},
