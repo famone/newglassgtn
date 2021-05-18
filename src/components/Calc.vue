@@ -29,18 +29,24 @@
 					</div>
 				</div>
 
-				<div class="col-lg-3">
+				<div class="col-lg-4">
 					<label for="">Выберите марку:</label>
 					<select name="" id="" v-if="carBrands" v-model="checkedBrand">
        				   <option :value="item" v-for="item in carBrands">{{item}}</option>
         			</select>
 				</div>	
-				<div class="col-lg-3">
+				<div class="col-lg-4">
 					<label for="">Выберите модель:</label>
 					<select name="" id="" v-if="models" v-model="checkedModel">
          				<option :value="item" v-for="item in getModels">{{item}}</option>
         			</select>
-				</div>	
+				</div>
+				<div class="col-lg-4">
+					<label for="">Выберите год автомобобиля:</label>
+					<select name="" id="" v-model="checkedYear">
+         				<option :value="item" v-for="item in years">{{item}}</option>
+        			</select>
+				</div>
 				<div class="col-lg-3">
 					<label for="">Ваше имя:</label>
 					<input type="text" v-model="name" :class="{errorInp : $v.name.$dirty && !$v.name.required}">
@@ -83,12 +89,14 @@ import { required, minLength } from "vuelidate/lib/validators";
     		return{
 				checkedServ: 'Выберите услугу',
         		checkedBrand: '',
+				checkedYear: null,
         		carBrands: null,
         		models: null,
         		checkedModel: '',
         		accepted: false,
 				name: '',
 				tel: '',
+				years: [],
 				succeed: false,
 				error:  false,
         		types: [
@@ -180,6 +188,7 @@ import { required, minLength } from "vuelidate/lib/validators";
 					carType: checkedType.txt,
 					carBrand: this.checkedBrand,
 					carModel: this.checkedModel,
+					carYear: this.checkedYear,
 					nameClient: this.name,
 					tel: this.tel
 				}
@@ -197,6 +206,7 @@ import { required, minLength } from "vuelidate/lib/validators";
 					this.checkedBrand = '';
 					this.checkedModel = '';
 					this.accepted = false;
+					this.checkedYear = null;
 					this.succeed = true;
 					this.error = false;
                 })
@@ -204,6 +214,7 @@ import { required, minLength } from "vuelidate/lib/validators";
                     this.checkedServ = '';
 					this.checkedBrand = '';
 					this.checkedModel = '';
+					this.checkedYear = null;
 					this.accepted = false;
 					this.succeed = false;
 					this.error = true;
@@ -230,6 +241,13 @@ import { required, minLength } from "vuelidate/lib/validators";
         		this.carBrands = cars
         		console.log(this.models)
     		})
+
+			let i = 1985;
+			let currentYear = new Date().getFullYear()
+			while (i <= currentYear) {
+				this.years.push(i);
+				i++;
+			}
       	}
 	}
 </script>
