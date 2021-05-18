@@ -796,6 +796,9 @@ footer{
 	
 }
 @media (max-width: 512px) {
+	#advantages h2{
+		font-size: 30px;
+	}
 	.descr-box {
 		padding: 35px 25px;
 	}

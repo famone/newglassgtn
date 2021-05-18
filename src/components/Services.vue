@@ -6,7 +6,7 @@
 			</div>
 			<div class="serv-row">
 				<router-link tag="div" :to=" '/services/' + item.id " class="col-lg-3" v-for="item in services">
-					<div class="serv-item">
+					<div class="serv-item" :style="{'background-image': 'url(' + item.cardBg + ')'}">
 						<div class="serv-body">
 							<router-link tag="p" :to=" '/services/' + item.id " class="podrobnee">
 								Подробнее <img src="../assets/img/redarr.svg" alt="">

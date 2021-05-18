@@ -45,6 +45,7 @@ import Map from './components/Map.vue'
   	created(){
   		this.$store.dispatch("serv/loadServs")
       this.$store.dispatch("proj/loadProj")
+      this.$store.dispatch("proj/loadGallery")
   	}
   }
 </script>
