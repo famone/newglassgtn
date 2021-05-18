@@ -13,8 +13,8 @@
 
 				<div class="row">
 					<div class="col-lg-4">
-						<select name="" id="">
-							<option value="0">Выберите услугу</option>
+						<select name="" id="" v-model="checkedServ">
+							<option v-for="serv in services" :value="serv.name">{{serv.name}}</option>
 						</select>
 					</div>
 
@@ -43,16 +43,17 @@
 				</div>	
 				<div class="col-lg-3">
 					<label for="">Ваше имя:</label>
-					<input type="text" >
+					<input type="text" v-model="name" :class="{errorInp : $v.name.$dirty && !$v.name.required}">
 				</div>
 				<div class="col-lg-3">
 					<label for="">Контактный телефон:</label>
-					<input type="text" >
+					<input type="text" v-model="tel" v-mask=" '+7 ### ###-##-##' " placeholder="+7"
+					:class="{errorInp : $v.tel.$dirty && !$v.tel.required}">
 				</div>
 
 				<div class="col-lg-12">
 					<div class="accept">
-						<button class="more-btn">Записаться</button>
+						<button class="more-btn" @click="submitForm">Записаться</button>
 						<div class="accept-btn" :class="{acCheck: accepted}" @click="accepted = !accepted" >
 							<div class="ch-box"></div>
 							<p class="grey-txt">Я даю свое согласие на <br> обработку персональных данных</p>
@@ -69,16 +70,20 @@
 
 <script>
 import axios from 'axios'
+import {mapGetters} from 'vuex'
+import { required, minLength } from "vuelidate/lib/validators";
 
 	export default{
 		data(){
     		return{
-            
+				checkedServ: 'Выберите услугу',
         		checkedBrand: '',
         		carBrands: null,
         		models: null,
         		checkedModel: '',
         		accepted: false,
+				name: '',
+				tel: '',
         		types: [
         			{
         				txt: 'Легковой',
@@ -119,10 +124,19 @@ import axios from 'axios'
         		]
       		}
     	},
+		validations: {
+			name: {
+				required
+			},
+			tel: {
+				required
+			}
+		},
     	computed: {
     		getModels(){
         		return this.models[this.checkedBrand]
-      		}
+      		},
+			...mapGetters({ services: "serv/getServs"})
     	},
     	methods: {
     		changeCar(id){
@@ -132,7 +146,52 @@ import axios from 'axios'
     			})
 
     			this.types[id].active = true
-    		}
+    		},
+			submitForm(){
+				if(this.$v.$invalid) {
+					this.$v.$touch();
+					return;
+				}
+
+				if(!this.accepted){
+					let shakedBtn = document.querySelector('.accept-btn')
+					shakedBtn.classList.add('shake')
+					setTimeout(()=>{
+						shakedBtn.classList.remove('shake')
+					}, 2000)
+					return
+				}
+
+				
+
+				let checkedType = this.types.find(item =>{
+					return item.active
+				})
+
+				let emailBody = {
+					serv: this.checkedServ,
+					carType: checkedType.txt,
+					carBrand: this.checkedBrand,
+					carModel: this.checkedModel,
+					nameClient: this.name,
+					tel: this.tel
+				}
+
+				var form = new FormData();
+
+				for (var field in emailBody){
+					form.append(field, emailBody[field]);
+				};
+
+				axios
+            	.post('https://new.glassgtn.ru/wp-json/contact-form-7/v1/contact-forms/18/feedback', form)
+                .then((response) => {
+                    alert('Письмо отправлено!')
+                })
+                .catch((error) => {
+                    alert('Произошла ошибка!')
+                });
+			}
     	},
     	created(){
             // https://raw.githubusercontent.com/blanzh/carsBase/master/docs/cars.json
