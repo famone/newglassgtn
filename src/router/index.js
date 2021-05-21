@@ -12,19 +12,16 @@ const router = new VueRouter({
 });
 
 
-// router.beforeEach((to, from, next) => {
-
-//     if (store.getters["smeta/getAuthenticated"]) {
-//          next()
-//     }else{
-//         if (to.path != "/login") {
-//              next("/login")
-//          }
-//          else {
-//              next()
-//          }
-//     }
-// })
+router.beforeEach((to, from, next) => {
+     store.dispatch('proj/changePreloader')
+  
+    setTimeout(function(){
+                        next()
+    }, 600);
+    setTimeout(function(){
+                store.dispatch('proj/changePreloader')        
+    }, 800);
+  })
 
 
 

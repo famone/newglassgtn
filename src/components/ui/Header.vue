@@ -36,10 +36,10 @@
 						link: '/services',
 						txt: 'Услуги'
 					},
-					{
-						link: '/projects',
-						txt: 'Проекты'
-					},
+					// {
+					// 	link: '/projects',
+					// 	txt: 'Проекты'
+					// },
 					{
 						link: '/gallery',
 						txt: 'Галерея работ'

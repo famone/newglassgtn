@@ -3,7 +3,8 @@
 		<Videofon />
 		<Calc />
 		<Services />
-		<Projects />
+		<!-- <Projects /> -->
+		<tempGallery />
 		<Advantages />
 	</div>
 </template>
@@ -12,10 +13,11 @@
 import Videofon from '../components/Videofon.vue'
 import Calc from '../components/Calc.vue'
 import Services from '../components/Services.vue'
-import Projects from '../components/Projects.vue'
+// import Projects from '../components/Projects.vue'
 import Advantages from '../components/Advantages.vue'
+import tempGallery from '../components/tempGallery.vue'
 
 export default{
-	components: {Videofon, Calc, Services, Projects, Advantages},
+	components: {Videofon, Calc, Services, Advantages, tempGallery},
 }
 </script>

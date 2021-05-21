@@ -14,7 +14,7 @@ const serv = {
 	actions: {
          loadServs({commit}){
          	axios
-         	.get('/wp-json/ag/v1/get/services/')
+         	.get('https://new.glassgtn.ru/wp-json/ag/v1/get/services/')
          	.then(res =>{
          		commit("SET_SERVS", res.data)
          	})
@@ -25,7 +25,7 @@ const serv = {
 			return state.services
 		},
 		getServSingle: (state) => (id) =>{
-			return state.services.find(item => item.id == id)
+			return state.services.find(item => item.slug == id)
 		}
 	}
 }

@@ -34,12 +34,12 @@
 		</section>
 
 
-		<section id="prices">
+		<section id="prices" >
 			<div class="container">
 				<div class="col-lg-12">
 					<h2 class="side_dev">Цены</h2>
 				</div>
-				<div class="table-responsive">
+				<div class="res-table">
 					<table>
 						<thead>
 							<tr>

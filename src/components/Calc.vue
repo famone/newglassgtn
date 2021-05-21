@@ -200,7 +200,7 @@ import { required, minLength } from "vuelidate/lib/validators";
 				};
 
 				axios
-            	.post('/wp-json/contact-form-7/v1/contact-forms/18/feedback', form)
+            	.post('https://new.glassgtn.ru/wp-json/contact-form-7/v1/contact-forms/18/feedback', form)
                 .then((response) => {
                     this.checkedServ = '';
 					this.checkedBrand = '';
