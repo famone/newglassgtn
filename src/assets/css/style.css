@@ -748,8 +748,15 @@ footer{
 	margin-bottom: 25px;
 	position: relative;
 	z-index: 10;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items:center;
 }
-
+.gallery-img img{
+	min-width: 100%;
+	min-height: 100%;
+}
 .projInner{
 	position: relative;
 }

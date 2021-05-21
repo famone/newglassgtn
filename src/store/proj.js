@@ -5,7 +5,7 @@ const proj = {
 	namespaced: true,
 	state: {
 		projects: [],
-		gallery: [],
+		gallery: null,
 		preloader: false
   	},
 	mutations: {
@@ -22,7 +22,7 @@ const proj = {
 	actions: {
         loadProj({commit}){
          	axios
-         	.get('https://new.glassgtn.ru/wp-json/ag/v1/get/projects')
+         	.get('/wp-json/ag/v1/get/projects')
          	.then(res =>{
          		console.log(res.data)
          		commit("SET_PROJ", res.data)
@@ -30,7 +30,7 @@ const proj = {
         },
 		loadGallery({commit}){
 			axios
-         	.get('https://new.glassgtn.ru/wp-json/ag/v1/get/gallery')
+         	.get('/wp-json/ag/v1/get/gallery')
          	.then(res =>{
          		console.log(res.data)
          		commit("SET_GALLERY", res.data)

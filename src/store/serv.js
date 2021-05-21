@@ -14,7 +14,7 @@ const serv = {
 	actions: {
          loadServs({commit}){
          	axios
-         	.get('https://new.glassgtn.ru/wp-json/ag/v1/get/services/')
+         	.get('/wp-json/ag/v1/get/services/')
          	.then(res =>{
          		commit("SET_SERVS", res.data)
          	})
