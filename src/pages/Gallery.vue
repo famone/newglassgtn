@@ -3,10 +3,8 @@
         <Inner :title=" 'Галерея работ' " />
         <section id="about">
 			<div class="container">
-				<div class="col-lg-4" v-for="item in gallery.img" v-if="gallery">
-					<div class="gallery-img" >
-                        <img v-lazy="item">
-                    </div>
+				<div class="col-lg-4" v-for="item in gallery.img">
+					<div class="gallery-img" :style="{'background-image': 'url(' + item + ')'}"></div>
 				</div>
 			</div>
 		</section>

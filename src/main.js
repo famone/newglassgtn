@@ -9,7 +9,7 @@ import Vuelidate from 'vuelidate'
 import VueScrollTo from 'vue-scrollto'
 import VueTyperPlugin from 'vue-typer'
 import VCalendar from 'v-calendar';
-import VueLazyload from 'vue-lazyload'
+// import VueLazyload from 'vue-lazyload'
 
 
 import 'swiper/css/swiper.css'
@@ -24,13 +24,13 @@ Vue.use(VueTheMask)
 
 Vue.use(VCalendar)
 
-Vue.use(VueLazyload, {
-  preLoad: 1.3,
-  error: 'https://new.glassgtn.ru/wp-content/uploads/2021/05/zagl.jpg',
-  loading: 'https://new.glassgtn.ru/wp-content/uploads/2021/05/zagl.jpg',
-  attempt: 1,
-  listenEvents: [ 'scroll' ]
-})
+// Vue.use(VueLazyload, {
+//   preLoad: 1.3,
+//   error: 'https://new.glassgtn.ru/wp-content/uploads/2021/05/zagl.jpg',
+//   loading: 'https://new.glassgtn.ru/wp-content/uploads/2021/05/zagl.jpg',
+//   attempt: 1,
+//   listenEvents: [ 'scroll' ]
+// })
 
 
 
