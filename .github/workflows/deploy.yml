@@ -27,4 +27,4 @@ jobs:
         username: kovalyo9_kt
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./dist/
-        server-dir: /new.glassgtn.ru/public_html/dist/
+        server-dir: /glassgtn.ru/public_html/dist/
