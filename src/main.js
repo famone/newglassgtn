@@ -26,8 +26,8 @@ Vue.use(VCalendar)
 
 // Vue.use(VueLazyload, {
 //   preLoad: 1.3,
-//   error: 'https://new.glassgtn.ru/wp-content/uploads/2021/05/zagl.jpg',
-//   loading: 'https://new.glassgtn.ru/wp-content/uploads/2021/05/zagl.jpg',
+//   error: '/wp-content/uploads/2021/05/zagl.jpg',
+//   loading: '/wp-content/uploads/2021/05/zagl.jpg',
 //   attempt: 1,
 //   listenEvents: [ 'scroll' ]
 // })
